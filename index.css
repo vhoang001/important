@@ -22,3 +22,19 @@ body {
     margin: 5px;
 }
 
+h1 span {
+    position: relative;
+    animation: displayText 9s infinite;
+    animation-delay: calc(-3s * var(--i));
+}
+
+@keyframes displayText {
+    0%
+    {
+        display: inline-block;
+    }
+    33.33%,100%
+    {
+        display: none;
+    }
+}

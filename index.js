@@ -14,7 +14,7 @@ var secondCardSelected
 var currentBoard = []
 // Declare the array of image name
 var cardImageName = ["boo","bowser-jr","bowser","daisy","diddy","donkey","luigi","mario","peach","yoshi"]
-
+// Declare sound when player get matching pair
 const correctSound = new Audio("/assets/super_mario_bros.mp3")
 
 window.onload = function() { // Add function to window when loading
@@ -159,9 +159,11 @@ function isWin(counter){
     */ 
     if (counter === 3){
         playSound()
-        alert("Winner Chicken Dinner")
+        alert ("Winner Chicken Dinner") 
+        //confetti()
         return
     }
+    
 }
 
 function resetSelectedCard(){
@@ -193,4 +195,8 @@ function pauseSound () {
         correctSound.pause();
     },1000);
 }
+
+
+
+
 
