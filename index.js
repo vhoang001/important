@@ -157,7 +157,7 @@ function isWin(counter){
     Parameter: counter
     Return: None
     */ 
-    if (counter === 3){
+    if (counter === 10){
         playSound()
         document.getElementById("gameStatus").innerText = "Winner Chicken Dinner"; 
         return
