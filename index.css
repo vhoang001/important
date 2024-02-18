@@ -5,6 +5,7 @@ body {
     text-align: center;
 }
 
+/* Add perspective to the parent container */
 #board {
     display: block;
     height: 1000px;
@@ -16,6 +17,8 @@ body {
     justify-content: center; /*align items in center in css*/
 }
 
+
+/* Card styles */
 .card {
     height: 200px;
     width: 200px;
@@ -37,4 +40,42 @@ h1 span {
     {
         display: none;
     }
+}
+
+
+/* Card container with perspective start here*/
+#board {
+    perspective: 1000px;
+}
+
+.card {
+    transform: rotateY(0deg) rotateX(0deg); /* To ensure the 3D effect is visible */
+    transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(245, 228, 78, 0.3);  
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+/* Hover state */
+.card:hover {
+    transform: rotateY(20deg) rotateX(10deg);
+    box-shadow: 0 10px 25px rgba(231, 211, 30, 0.5);
+}
+
+/* Front of the card */
+.card-front, .card-back {
+    position: absolute;
+    backface-visibility: hidden; /* Hide the back side of the card when flipped */
+    height: 100%;
+    width: 100%;
+    border-radius: 10px; /* Optional: rounded corners */
+}
+
+/* Back of the card, flipped initially */
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Flip the card on click */
+.card.is-clicked {
+    transform: rotateY(180deg);
 }

@@ -146,7 +146,7 @@ function isLose(counter){
     Return: None
     */ 
     if(counter === 2 ){
-        alert("Loser")
+        document.getElementById("gameStatus").innerText = "Oh No No No...Loser";
         return
     }
 }
@@ -159,8 +159,7 @@ function isWin(counter){
     */ 
     if (counter === 3){
         playSound()
-        alert ("Winner Chicken Dinner") 
-        //confetti()
+        document.getElementById("gameStatus").innerText = "Winner Chicken Dinner"; 
         return
     }
     
@@ -196,7 +195,9 @@ function pauseSound () {
     },1000);
 }
 
-
-
-
+document.querySelectorAll('.card').forEach(card => { //the card will rotate when player click the it
+    card.addEventListener('click', () => {
+        card.classList.toggle('is-clicked');
+    });
+});
 
